@@ -1,0 +1,24 @@
+[user]
+	name = Anh Dau
+	email = redbeanboy98@gmail.com
+[alias]
+	adda = add -A
+	unstage = reset HEAD --
+	unadd = unstage
+	co = checkout
+	ci = commit
+	cim = commit -m
+	ciam = commit -am
+	br = branch
+	st = status
+	dsd = checkout --
+	dsda = !git add -A . && git stash && git stash drop stash@{0}
+	pom = pull origin master
+	pod = pull origin development
+	rss = "!f() { git reset --soft HEAD~$1; }; f"
+	rsh = "!f() { git reset --hard HEAD~$1; }; f"
+	publish = push -u origin
+	com = checkout master
+	cod = checkout development
+[pull]
+	ff = only
