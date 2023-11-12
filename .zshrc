@@ -114,11 +114,11 @@ export PATH="$GEM_HOME/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Eslint and prettier executables
-export MASON_HOME="$HOME/.local/share/nvim/mason"
-alias eslint_d="$MASON_HOME/bin/eslint_d"
-alias prettierd="$MASON_HOME/bin/prettierd"
+# export MASON_HOME="$HOME/.local/share/nvim/mason"
+# alias eslint_d="$MASON_HOME/bin/eslint_d"
+# alias prettierd="$MASON_HOME/bin/prettierd"
 
-# handy aliases to attach to tmux workspace session or create a new one if non-existent
+# Handy aliases to attach to tmux workspace session or create a new one if non-existent
 alias workspace="source $HOME/.config/tmux/workspace.zsh"
 alias ws="source $HOME/.config/tmux/workspace.zsh"
 
@@ -127,5 +127,7 @@ alias nvim_config="cd $HOME/.config/nvim && nvim"
 alias fecore="cd $HOME/$FE_CORE && nvim"
 alias mobile="cd $HOME/$MOBILE && nvim"
 alias mainapp="cd $HOME/$MAIN_APP && nvim"
+
+# Other handy aliases
 alias vim=nvim
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles/ --work-tree=$HOME"
