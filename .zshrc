@@ -75,12 +75,12 @@ export EXPENSES="dev/eh/expenses"
 export MOBILE="dev/eh/eh-mobile-pro"
 export HERO_DESIGN="dev/eh/hero-design"
 
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-
 export DATABASE_HOST=localhost
 export DATABASE_PORT=5432
 # export DATABASE_NAME=auth_service_development
 export APP_ENV=development
+
+export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/emulator:$PATH"
@@ -118,8 +118,9 @@ export MASON_HOME="$HOME/.local/share/nvim/mason"
 alias eslint_d="$MASON_HOME/bin/eslint_d"
 alias prettierd="$MASON_HOME/bin/prettierd"
 
-# tmux quickly attach to tmux session
+# handy aliases to attach to tmux workspace session or create a new one if non-existent
 alias workspace="source $HOME/.config/tmux/workspace.zsh"
+alias ws="source $HOME/.config/tmux/workspace.zsh"
 
 # Command aliases for commonly visited directories
 alias nvim_config="cd $HOME/.config/nvim && nvim"
