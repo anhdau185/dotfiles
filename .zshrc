@@ -119,11 +119,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # alias prettierd="$MASON_HOME/bin/prettierd"
 
 # Handy aliases to attach to tmux workspace session or create a new one if non-existent
-alias workspace="source $HOME/.config/tmux/workspace.zsh"
-alias ws="source $HOME/.config/tmux/workspace.zsh"
+alias workspace="tmux new-session -A -s workspace"
+alias ws="tmux new-session -A -s workspace"
 
 # Command aliases for commonly visited directories
-alias nvim_config="cd $HOME/.config/nvim && nvim"
+alias nvimconf="cd $HOME/.config/nvim && nvim"
 alias fecore="cd $HOME/$FE_CORE && nvim"
 alias mobile="cd $HOME/$MOBILE && nvim"
 alias mainapp="cd $HOME/$MAIN_APP && nvim"
