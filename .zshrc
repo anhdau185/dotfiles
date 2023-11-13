@@ -26,7 +26,7 @@ plugins=(
 )
 
 # Prevent oh-my-zsh from dumping .zcompdump* file to $HOME
-# And give it a more reason
+# And switch to a more sensible location
 export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
 source $ZSH/oh-my-zsh.sh
