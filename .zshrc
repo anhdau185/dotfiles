@@ -35,6 +35,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
+# NVM
+source $HOME/.config/nvm/lazy-nvm.sh
+
 # Paths to local repos
 export FE_CORE="dev/eh/frontend-core"
 export MAIN_APP="dev/eh/employment-hero"
