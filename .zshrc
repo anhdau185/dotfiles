@@ -1,3 +1,5 @@
+# zmodload zsh/zprof # Uncomment this line to enable profiling
+
 # Oh My Zsh configurations
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -124,3 +126,5 @@ alias mainapp="cd $HOME/$MAIN_APP && nvim"
 # Other handy aliases
 alias vim=nvim
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles/ --work-tree=$HOME"
+
+# zprof # Uncomment this line to enable profiling
