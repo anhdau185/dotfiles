@@ -1,8 +1,12 @@
-# zmodload zsh/zprof # Uncomment this line to enable profiling
+#zmodload zsh/zprof # Uncomment this line to enable profiling
 
 # Oh My Zsh configurations
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Prevent oh-my-zsh from dumping .zcompdump* file to $HOME
+# And switch to a more sensible location
+export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
 # Set name of the theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -14,15 +18,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   zsh-syntax-highlighting
   zsh-autosuggestions
   zsh-vi-mode
 )
-
-# Prevent oh-my-zsh from dumping .zcompdump* file to $HOME
-# And switch to a more sensible location
-export ZSH_COMPDUMP="$ZSH/cache/.zcompdump-$HOST"
 
 source $ZSH/oh-my-zsh.sh
 # End of Oh My Zsh configurations
@@ -36,32 +35,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# Load NVM on-demand for fast startup
-nvm() {
-    unset -f nvm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    nvm "$@"
-}
-node() {
-    unset -f node
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    node "$@"
-}
-npm() {
-    unset -f npm
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    npm "$@"
-}
-npx() {
-    unset -f npx
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-    npx "$@"
-}
-
 # Paths to local repos
 export FE_CORE="dev/eh/frontend-core"
 export MAIN_APP="dev/eh/employment-hero"
@@ -72,7 +45,7 @@ export HERO_DESIGN="dev/eh/hero-design"
 
 export DATABASE_HOST=localhost
 export DATABASE_PORT=5432
-# export DATABASE_NAME=auth_service_development
+#export DATABASE_NAME=auth_service_development
 export APP_ENV=development
 
 export PATH="/usr/local/opt/libpq/bin:$PATH"
@@ -109,9 +82,9 @@ export PATH="$GEM_HOME/bin:$PATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Eslint and prettier executables
-# export MASON_HOME="$HOME/.local/share/nvim/mason"
-# alias eslint_d="$MASON_HOME/bin/eslint_d"
-# alias prettierd="$MASON_HOME/bin/prettierd"
+#export MASON_HOME="$HOME/.local/share/nvim/mason"
+#alias eslint_d="$MASON_HOME/bin/eslint_d"
+#alias prettierd="$MASON_HOME/bin/prettierd"
 
 # Handy aliases to attach to tmux workspace session or create a new one if non-existent
 alias workspace="tmux new-session -A -s workspace"
@@ -127,4 +100,4 @@ alias mainapp="cd $HOME/$MAIN_APP && nvim"
 alias vim=nvim
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles/ --work-tree=$HOME"
 
-# zprof # Uncomment this line to enable profiling
+#zprof # Uncomment this line to enable profiling
