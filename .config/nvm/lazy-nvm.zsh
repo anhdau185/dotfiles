@@ -1,6 +1,6 @@
 export NVM_DIR="$HOME/.nvm"
 
-# This lazy-loads nvm
+# This loads nvm on-demand
 nvm() {
   unset -f nvm
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm without automatically executing `nvm use` after loading
@@ -21,7 +21,7 @@ if [ ! -z "$DEFAULT_NODE_VER_PATH" ]; then
   export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
 fi
 
-# Automatically switch node version if there is .nvmrc in the directory
+# This switches node version automatically if there is .nvmrc in the directory
 switch_node_version() {
   nvmrc="./.nvmrc"
 
