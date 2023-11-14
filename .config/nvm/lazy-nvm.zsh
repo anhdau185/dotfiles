@@ -20,3 +20,18 @@ DEFAULT_NODE_VER_PATH="$(find $NVM_DIR/versions/node -maxdepth 1 -name "v${DEFAU
 if [ ! -z "$DEFAULT_NODE_VER_PATH" ]; then
   export PATH="$DEFAULT_NODE_VER_PATH/bin:$PATH"
 fi
+
+# Automatically switch node version if there is .nvmrc in the directory
+switch_node_version() {
+  nvmrc="./.nvmrc"
+
+  if [ -f "$nvmrc" ]; then
+    target_version="$(cat "$nvmrc")"
+    current_version="$(node -v)"
+
+    if [ "$target_version" != "$current_version" ]; then
+      nvm use $target_version
+    fi
+  fi
+}
+chpwd_functions=(switch_node_version)
