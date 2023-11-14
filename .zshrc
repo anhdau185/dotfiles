@@ -1,6 +1,6 @@
 #zmodload zsh/zprof # Uncomment this line to enable profiling
 
-# Oh My Zsh configurations
+# Oh My Zsh config
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -24,11 +24,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# End of Oh My Zsh configurations
+# End of Oh My Zsh config
 
 # Powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source $HOME/.p10k.zsh
 
 # Homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -36,7 +36,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
 # NVM
-source $HOME/.config/nvm/lazy-nvm.sh
+source $HOME/.config/nvm/lazy-nvm.zsh
 
 # Paths to local repos
 export FE_CORE="dev/eh/frontend-core"
@@ -65,7 +65,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 # Rust lang - cargo, rustc, rustup and other commands will be added to PATH
 source "$HOME/.cargo/env"
 
-# RVM, Ruby, and gems configurations
+# RVM, Ruby, and gems config
 # These envs make sure rvm install rubies successful on M1 chip
 export PATH="$(brew --prefix)/opt/openssl@1.1/bin:$PATH"
 export LDFLAGS="-L$(brew --prefix)/opt/openssl@1.1/lib"
@@ -79,7 +79,7 @@ export GEM_PATH="$HOME/.rvm/gems/ruby-2.7.2:$HOME/.rvm/gems/ruby-2.7.2@global"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$GEM_HOME/bin:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-# End of RVM, Ruby, and gems configurations
+# End of RVM, Ruby, and gems config
 
 # Java
 export JAVA_HOME=$(/usr/libexec/java_home)
