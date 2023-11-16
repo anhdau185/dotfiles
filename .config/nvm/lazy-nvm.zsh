@@ -26,11 +26,13 @@ switch_node_version() {
   nvmrc="./.nvmrc"
 
   if [ -f "$nvmrc" ]; then
-    target_version="$(cat "$nvmrc")"
-    current_version="$(node -v)"
+    prefix="v"
+    current_version="${"$(node -v)"#"$prefix"}" # node version without "v" prefix
+    target_version="${"$(cat "$nvmrc")"#"$prefix"}" # nvmrc version without "v" prefix
 
     if [ "$target_version" != "$current_version" ]; then
-      nvm use $target_version
+      echo "Detected .nvmrc file with a node version (v$target_version) different from current version (v$current_version). Trying to switch to node v$target_version..."
+      nvm use "$target_version"
     fi
   fi
 }
