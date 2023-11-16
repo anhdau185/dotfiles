@@ -24,16 +24,24 @@ fi
 # This switches node version automatically if there is .nvmrc in the directory
 switch_node_version() {
   nvmrc="./.nvmrc"
+  prefix="v"
+  current_ver="${"$(node -v)"#"$prefix"}" # node version without prefix
 
   if [ -f "$nvmrc" ]; then
-    prefix="v"
-    current_version="${"$(node -v)"#"$prefix"}" # node version without "v" prefix
-    target_version="${"$(cat "$nvmrc")"#"$prefix"}" # nvmrc version without "v" prefix
+    target_ver="${"$(cat "$nvmrc")"#"$prefix"}" # nvmrc version without prefix
 
-    if [ "$target_version" != "$current_version" ]; then
-      echo "Detected .nvmrc file with a node version (v$target_version) different from current version (v$current_version). Trying to switch to node v$target_version..."
-      nvm use "$target_version"
+    if [ "$target_ver" != "$current_ver" ]; then
+      echo "Found .nvmrc in the directory with a different node version. Trying to switch to node v$target_ver..."
+      nvm use "$target_ver"
+    fi
+  else
+    default_ver="${"$(echo $DEFAULT_NODE_VER)"#"$prefix"}" # default node version without prefix
+
+    if [ "$current_ver" != "$default_ver" ]; then
+      echo "No .nvmrc found in the directory. Switching back to default node version..."
+      nvm use default
     fi
   fi
 }
 chpwd_functions=(switch_node_version)
+switch_node_version
