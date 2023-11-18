@@ -89,18 +89,14 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 #alias eslint_d="$MASON_HOME/bin/eslint_d"
 #alias prettierd="$MASON_HOME/bin/prettierd"
 
-# Handy aliases to attach to tmux workspace session or create a new one if non-existent
+# Handy aliases
 alias workspace="tmux new-session -A -s workspace"
 alias ws="tmux new-session -A -s workspace"
-
-# Command aliases for commonly visited directories
 alias nvimconf="cd $HOME/.config/nvim && nvim"
 alias fecore="cd $HOME/$FE_CORE && nvim"
 alias mobile="cd $HOME/$MOBILE && nvim"
 alias mainapp="cd $HOME/$MAIN_APP && nvim"
-
-# Other handy aliases
-alias vim=nvim
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles/ --work-tree=$HOME"
+alias vim=nvim
 
 #zprof # Uncomment this line to enable profiling
