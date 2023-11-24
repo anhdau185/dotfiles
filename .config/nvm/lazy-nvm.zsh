@@ -31,7 +31,7 @@ switch_node_version() {
     target_ver="${"$(cat "$nvmrc" | xargs)"#"$prefix"}" # whitespace-trimmed nvmrc version without prefix
 
     if [[ ! -z "$target_ver" && "$target_ver" != "$current_ver" ]]; then
-      echo "Found .nvmrc with v$target_ver specified. Trying to switch to this node version..."
+      echo "Found .nvmrc with v$target_ver specified. Trying to use this node version..."
       nvm use "$target_ver"
     fi
   else
